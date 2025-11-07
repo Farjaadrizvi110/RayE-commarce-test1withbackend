@@ -1,71 +1,72 @@
-import React from "react";
+import { Link } from "react-router-dom";
+import { Mail, Phone, MapPin } from "lucide-react";
 
-const Footer: React.FC = () => {
+export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-r from-amber-50 to-orange-50 border-t border-amber-200">
-      <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* ================= About Us ================= */}
+    <footer className="bg-primary text-primary-foreground">
+      <div className="container mx-auto py-12 px-4">
+        <div className="grid grid-cols-1 xl:grid-cols-4 gap-8">
           <div>
-            {/* Title: Change to your project's "About Us" */}
-            <h3 className="text-lg font-semibold text-amber-800 mb-4">
-              {/* About Us */}
-            </h3>
-            <p className="text-gray-600">
-              {/* Fill in your "About Us" introduction here, for example: Committed to xxx, making xxx more xxx */}
+            <h3 className="text-xl font-bold mb-4">UK Print Pro</h3>
+            <p className="text-sm opacity-90">
+              Professional printing services for businesses across the UK. Quality prints, competitive prices, and exceptional customer service.
             </p>
           </div>
 
-          {/* ================= Contact Information ================= */}
           <div>
-            {/* Title: Contact Information */}
-            <h3 className="text-lg font-semibold text-amber-800 mb-4">
-              {/* Contact Information */}
-            </h3>
-            <div className="text-gray-600 space-y-2">
-              <p>
-                {/* Address: XXX Street, XXX District, XXX City, XXX Province */}
-              </p>
-              <p>
-                {/* Phone: 010-XXXXXXX */}
-              </p>
-              <p>
-                {/* Email: info@example.com */}
-              </p>
+            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <div className="space-y-2">
+              <Link to="/products" className="block text-sm opacity-90 hover:opacity-100 hover:text-secondary transition-colors">
+                Products
+              </Link>
+              <Link to="/quote" className="block text-sm opacity-90 hover:opacity-100 hover:text-secondary transition-colors">
+                Request Quote
+              </Link>
+              <Link to="/gallery" className="block text-sm opacity-90 hover:opacity-100 hover:text-secondary transition-colors">
+                Gallery
+              </Link>
+              <Link to="/contact" className="block text-sm opacity-90 hover:opacity-100 hover:text-secondary transition-colors">
+                Contact Us
+              </Link>
             </div>
           </div>
 
-          {/* ================= Business Hours / Other Information / Can be deleted ================= */}
           <div>
-            {/* Title: Can be changed to "Business Hours" or "Service Hours" */}
-            <h3 className="text-lg font-semibold text-amber-800 mb-4">
-              {/* Business Hours */}
-            </h3>
-            <div className="text-gray-600 space-y-2">
-              <p>
-                {/* Monday to Friday: 9:00-18:00 */}
-              </p>
-              <p>
-                {/* Please check announcements for weekends and public holidays */}
-              </p>
-              <p>
-                {/* Other notes, such as "Advance booking required" */}
-              </p>
+            <h3 className="text-lg font-semibold mb-4">Services</h3>
+            <div className="space-y-2 text-sm opacity-90">
+              <p>Business Cards & Stationery</p>
+              <p>Large Format Printing</p>
+              <p>Custom Packaging</p>
+              <p>Promotional Items</p>
+              <p>Finishing Services</p>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <div className="space-y-3 text-sm opacity-90">
+              <div className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
+                <span>123 Print Street, London, UK</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="h-4 w-4 flex-shrink-0" />
+                <span>020 1234 5678</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="h-4 w-4 flex-shrink-0" />
+                <span>info@ukprintpro.co.uk</span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* ================= Copyright Section ================= */}
-        <div className="mt-8 pt-8 border-t border-amber-200 text-center text-gray-600">
-          <p>
-            {/* © {currentYear} Your Company or Organization Name */}
-          </p>
+        <div className="mt-8 pt-8 border-t border-primary-light text-center text-sm opacity-75">
+          <p>{currentYear} UK Print Pro</p>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
